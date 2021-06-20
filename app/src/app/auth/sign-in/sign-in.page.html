@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="sign-in">
+    <ion-card class="sign-in--box">
+      <ion-card-header>
+        <ion-card-subtitle>Welcome to Apanjan</ion-card-subtitle>
+        <ion-card-title>Log in to your account</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ng-container *ngIf="fg">
+          <form [formGroup]="fg">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input formControlName="email" type="email" autocomplete="email" inputmode="email"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input formControlName="password" type="password" autocomplete="current-password"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button (click)="signIn()">
+                    Sign In
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ng-container>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

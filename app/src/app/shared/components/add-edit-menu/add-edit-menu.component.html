@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <span *ngIf="menuId;else AddHeader">Edit Menu</span>
+      <ng-template #AddHeader>Add Menu</ng-template>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only">
+          close
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="fg">
+    <form [formGroup]="fg">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+    </form>
+  </ng-container>
+</ion-content>
+<ion-footer></ion-footer>

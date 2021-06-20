@@ -1,0 +1,13 @@
+.sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+    &--box {
+        min-width: 300px;
+        --ion-grid-padding: 0;
+        --ion-grid-column-padding: 0;
+    }
+}

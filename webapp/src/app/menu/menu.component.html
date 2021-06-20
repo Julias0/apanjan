@@ -1,0 +1,13 @@
+<ng-container *ngIf="menus$|async as menus">
+    <div *ngFor="let menu of menus">
+        <h1 class="menu">
+            {{menu.name}}
+        </h1>
+        <h2>
+            Items
+        </h2>
+        <div *ngFor="let item of menu.items" class="item">
+            {{item.name}} - {{item.price}}
+        </div>
+    </div>
+</ng-container>

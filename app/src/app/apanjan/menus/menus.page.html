@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      My Menus
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="menus$|async as menus">
+    <ng-container *ngIf="menus?.length; else menuZeroState">
+      <ion-item button *ngFor="let menu of menus" (click)="openAddEditMenu(menu.id)">
+        {{menu.name}}
+      </ion-item>
+    </ng-container>
+    <ng-template #menuZeroState>
+      oh no!
+    </ng-template>
+  </ng-container>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openAddEditMenu()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
